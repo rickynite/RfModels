@@ -29,3 +29,10 @@ jobs:
         find . -iname "*.ipynb" -type f | while read -r notebook; do
           python .github/workflows/execute_and_convert.py "${notebook}" html
         done
+
+    - name: Upload HTML files as artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: html-files
+        path: '*.html'
+
