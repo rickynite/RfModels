@@ -28,5 +28,5 @@ jobs:
     - name: Execute and convert notebooks to HTML
       run: |
         find . -iname "*.ipynb" -type f | while read -r notebook; do
-          python .github/execute_and_convert.py "${notebook}" html
+          python .github/workflows/execute_and_convert.py "${notebook}" html
         done
